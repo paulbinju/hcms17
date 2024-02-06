@@ -15,7 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+// import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { CalendarComponent } from './calendar.component';
 import { FormDialogComponent as calFormComponent } from './dialogs/form-dialog/form-dialog.component';
 import { CalendarService } from './calendar.service';
@@ -26,12 +26,12 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { ComponentsModule } from '../shared/components/components.module';
 
-FullCalendarModule.registerPlugins([
-  dayGridPlugin,
-  timeGridPlugin,
-  listPlugin,
-  interactionPlugin
-]);
+// FullCalendarModule.registerPlugins([
+//   dayGridPlugin,
+//   timeGridPlugin,
+//   listPlugin,
+//   interactionPlugin
+// ]);
 
 @NgModule({
   imports: [
@@ -53,8 +53,8 @@ FullCalendarModule.registerPlugins([
     MatFormFieldModule,
     MatRadioModule,
     MatMenuModule,
-    OwlDateTimeModule,
-    OwlNativeDateTimeModule,
+    // OwlDateTimeModule,
+    // OwlNativeDateTimeModule,
     ComponentsModule
   ],
   declarations: [CalendarComponent, calFormComponent],

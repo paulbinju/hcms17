@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsRoutingModule } from './forms-routing.module';
 import { EditorsComponent } from './editors/editors.component';
@@ -32,9 +32,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { NgxMaskModule } from 'ngx-mask';
+// import { NgxMaskModule } from 'ngx-mask';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+// import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { ComponentsModule } from '../shared/components/components.module';
 
 @NgModule({
@@ -74,11 +74,12 @@ import { ComponentsModule } from '../shared/components/components.module';
     MatStepperModule,
     MatToolbarModule,
     MatTooltipModule,
-    OwlDateTimeModule,
-    OwlNativeDateTimeModule,
-    NgxMaskModule,
+    // OwlDateTimeModule,
+    // OwlNativeDateTimeModule,
     ColorPickerModule,
+    // NgxMaskModule,
     ComponentsModule
-  ]
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FormModule {}

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskComponent } from './task.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+// import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { TaskRoutingModule } from './task-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -28,7 +28,7 @@ import { ComponentsModule } from '../shared/components/components.module';
   imports: [
     CommonModule,
     FormsModule,
-    PerfectScrollbarModule,
+    // PerfectScrollbarModule,
     TaskRoutingModule,
     MatButtonModule,
     MatIconModule,

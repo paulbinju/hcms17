@@ -1,11 +1,11 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import {
-  CalendarOptions,
-  DateSelectArg,
-  EventClickArg,
-  EventApi
-} from '@fullcalendar/angular';
-import { EventInput } from '@fullcalendar/angular';
+// import {
+//   CalendarOptions,
+//   DateSelectArg,
+//   EventClickArg,
+//   EventApi
+// } from '@fullcalendar/angular';
+// import { EventInput } from '@fullcalendar/angular';
 
 import { MatDialog } from '@angular/material/dialog';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
@@ -13,7 +13,7 @@ import { Calendar } from './calendar.model';
 import { FormDialogComponent } from './dialogs/form-dialog/form-dialog.component';
 import { CalendarService } from './calendar.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { INITIAL_EVENTS } from './events-util';
+// import { INITIAL_EVENTS } from './events-util';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { UnsubscribeOnDestroyAdapter } from '../shared/UnsubscribeOnDestroyAdapter';
 
@@ -40,8 +40,8 @@ export class CalendarComponent
     'friends'
   ];
 
-  calendarEvents: EventInput[];
-  tempEvents: EventInput[];
+  // calendarEvents: EventInput[];
+  // tempEvents: EventInput[];
 
   public filters = [
     { name: 'work', value: 'Work', checked: true },
@@ -71,31 +71,31 @@ export class CalendarComponent
   }
 
   public ngOnInit(): void {
-    this.calendarEvents = INITIAL_EVENTS;
-    this.tempEvents = this.calendarEvents;
-    this.calendarOptions.initialEvents = this.calendarEvents;
+    // this.calendarEvents = INITIAL_EVENTS;
+    // this.tempEvents = this.calendarEvents;
+    // this.calendarOptions.initialEvents = this.calendarEvents;
   }
 
-  calendarOptions: CalendarOptions = {
-    headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-    },
-    initialView: 'dayGridMonth',
-    weekends: true,
-    editable: true,
-    selectable: true,
-    selectMirror: true,
-    dayMaxEvents: true,
-    select: this.handleDateSelect.bind(this),
-    eventClick: this.handleEventClick.bind(this),
-    eventsSet: this.handleEvents.bind(this)
-  };
+  // calendarOptions: CalendarOptions = {
+  //   headerToolbar: {
+  //     left: 'prev,next today',
+  //     center: 'title',
+  //     right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+  //   },
+  //   initialView: 'dayGridMonth',
+  //   weekends: true,
+  //   editable: true,
+  //   selectable: true,
+  //   selectMirror: true,
+  //   dayMaxEvents: true,
+  //   select: this.handleDateSelect.bind(this),
+  //   eventClick: this.handleEventClick.bind(this),
+  //   eventsSet: this.handleEvents.bind(this)
+  // };
 
-  handleDateSelect(selectInfo: DateSelectArg) {
-    this.addNewEvent();
-  }
+  // handleDateSelect(selectInfo: DateSelectArg) {
+  //   this.addNewEvent();
+  // }
 
   addNewEvent() {
     let tempDirection;
@@ -116,24 +116,24 @@ export class CalendarComponent
       if (result === 'submit') {
         this.calendarData = this.calendarService.getDialogData();
 
-        this.calendarEvents = this.calendarEvents.concat({
-          // add new event data. must create new array
-          id: this.calendarData.id,
-          title: this.calendarData.title,
-          start: this.calendarData.startDate,
-          end: this.calendarData.endDate,
-          className: this.getClassNameValue(this.calendarData.category),
-          groupId: this.calendarData.category,
-          details: this.calendarData.details
-        });
-        this.calendarOptions.events = this.calendarEvents;
-        this.addCusForm.reset();
-        this.showNotification(
-          'snackbar-success',
-          'Add Record Successfully...!!!',
-          'bottom',
-          'center'
-        );
+        // this.calendarEvents = this.calendarEvents.concat({
+        //   // add new event data. must create new array
+        //   id: this.calendarData.id,
+        //   title: this.calendarData.title,
+        //   start: this.calendarData.startDate,
+        //   end: this.calendarData.endDate,
+        //   className: this.getClassNameValue(this.calendarData.category),
+        //   groupId: this.calendarData.category,
+        //   details: this.calendarData.details
+        // });
+        // this.calendarOptions.events = this.calendarEvents;
+        // this.addCusForm.reset();
+        // this.showNotification(
+        //   'snackbar-success',
+        //   'Add Record Successfully...!!!',
+        //   'bottom',
+        //   'center'
+        // );
       }
     });
   }
@@ -148,16 +148,16 @@ export class CalendarComponent
   }
 
   filterEvent(element) {
-    const list = this.calendarEvents.filter((x) =>
-      element.map((y) => y).includes(x.groupId)
-    );
+    // const list = this.calendarEvents.filter((x) =>
+    //   element.map((y) => y).includes(x.groupId)
+    // );
 
-    this.calendarOptions.events = list;
+    // this.calendarOptions.events = list;
   }
 
-  handleEventClick(clickInfo: EventClickArg) {
-    this.eventClick(clickInfo);
-  }
+  // handleEventClick(clickInfo: EventClickArg) {
+  //   this.eventClick(clickInfo);
+  // }
 
   eventClick(row) {
     const calendarData: any = {
@@ -187,11 +187,11 @@ export class CalendarComponent
     this.subs.sink = dialogRef.afterClosed().subscribe((result) => {
       if (result === 'submit') {
         this.calendarData = this.calendarService.getDialogData();
-        this.calendarEvents.forEach(function (element, index) {
-          if (this.calendarData.id === element.id) {
-            this.editEvent(index, this.calendarData);
-          }
-        }, this);
+        // this.calendarEvents.forEach(function (element, index) {
+        //   if (this.calendarData.id === element.id) {
+        //     this.editEvent(index, this.calendarData);
+        //   }
+        // }, this);
         this.showNotification(
           'black',
           'Edit Record Successfully...!!!',
@@ -201,11 +201,11 @@ export class CalendarComponent
         this.addCusForm.reset();
       } else if (result === 'delete') {
         this.calendarData = this.calendarService.getDialogData();
-        this.calendarEvents.forEach(function (element, index) {
-          if (this.calendarData.id === element.id) {
-            row.event.remove();
-          }
-        }, this);
+        // this.calendarEvents.forEach(function (element, index) {
+        //   if (this.calendarData.id === element.id) {
+        //     row.event.remove();
+        //   }
+        // }, this);
 
         this.showNotification(
           'snackbar-danger',
@@ -218,24 +218,24 @@ export class CalendarComponent
   }
 
   editEvent(eventIndex, calendarData) {
-    const calendarEvents = this.calendarEvents.slice();
-    const singleEvent = Object.assign({}, calendarEvents[eventIndex]);
-    singleEvent.id = calendarData.id;
-    singleEvent.title = calendarData.title;
-    singleEvent.start = calendarData.startDate;
-    singleEvent.end = calendarData.endDate;
-    singleEvent.className = this.getClassNameValue(calendarData.category);
-    singleEvent.groupId = calendarData.category;
-    singleEvent.details = calendarData.details;
-    calendarEvents[eventIndex] = singleEvent;
-    this.calendarEvents = calendarEvents; // reassign the array
+    // const calendarEvents = this.calendarEvents.slice();
+    // const singleEvent = Object.assign({}, calendarEvents[eventIndex]);
+    // singleEvent.id = calendarData.id;
+    // singleEvent.title = calendarData.title;
+    // singleEvent.start = calendarData.startDate;
+    // singleEvent.end = calendarData.endDate;
+    // singleEvent.className = this.getClassNameValue(calendarData.category);
+    // singleEvent.groupId = calendarData.category;
+    // singleEvent.details = calendarData.details;
+    // calendarEvents[eventIndex] = singleEvent;
+    // this.calendarEvents = calendarEvents; // reassign the array
 
-    this.calendarOptions.events = calendarEvents;
+    // this.calendarOptions.events = calendarEvents;
   }
 
-  handleEvents(events: EventApi[]) {
-    // this.currentEvents = events;
-  }
+  // handleEvents(events: EventApi[]) {
+  //   // this.currentEvents = events;
+  // }
 
   createCalendarForm(calendar): UntypedFormGroup {
     return this.fb.group({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { ICategories } from 'src/app/interfaces/icategories';
+// import { ICategories } from 'src/app/interfaces/icategories';
 import { CategoryService } from 'src/app/services/category.service';
 import { CategoryaddComponent } from '../categoryadd/categoryadd.component';
 import { CategorydeleteComponent } from '../categorydelete/categorydelete.component';
@@ -14,7 +14,7 @@ import { CategoryeditComponent } from '../categoryedit/categoryedit.component';
 })
 export class CategoryviewComponent implements OnInit {
   displayedColumns: string[] = ['categoryID', 'categoryName','categoryCode',  'publication','refNo', 'action'];
-  icategories: ICategories;
+  // icategories: ICategories;
 
   constructor(private categoryservice: CategoryService, private dialog: MatDialog, private spinnerservice: NgxSpinnerService) { }
 
@@ -27,7 +27,7 @@ export class CategoryviewComponent implements OnInit {
     setTimeout(() => {
       this.categoryservice.getCategory().subscribe({
         next: data => {
-          this.icategories = data;
+          // this.icategories = data;
           this.spinnerservice.hide();
         },
         error: error => {

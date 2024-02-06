@@ -14,9 +14,8 @@
             <i class="material-icons col-green">trending_up</i>
           </h3>
           <div class="apex-chart-center">
-            <apx-chart [series]="smallBarChart.series" [chart]="smallBarChart.chart"
-              [plotOptions]="smallBarChart.plotOptions" [tooltip]="smallBarChart.tooltip">
-            </apx-chart>
+            <!-- <apx-chart [series]="smallBarChart.series" [chart]="smallBarChart.chart" [plotOptions]="smallBarChart.plotOptions" [tooltip]="smallBarChart.tooltip">
+            </apx-chart> -->
           </div>
         </div>
       </div>
@@ -27,8 +26,7 @@
             <i class="material-icons col-red">trending_down</i>
           </h3>
           <div class="apex-chart-center">
-            <apx-chart [series]="smallAreaChart.series" [chart]="smallAreaChart.chart" [stroke]="smallAreaChart.stroke"
-              [yaxis]="smallAreaChart.yaxis" [fill]="smallAreaChart.fill" [colors]="smallAreaChart.colors"></apx-chart>
+            <!-- <apx-chart [series]="smallAreaChart.series" [chart]="smallAreaChart.chart" [stroke]="smallAreaChart.stroke" [yaxis]="smallAreaChart.yaxis" [fill]="smallAreaChart.fill" [colors]="smallAreaChart.colors"></apx-chart> -->
           </div>
         </div>
       </div>
@@ -39,9 +37,8 @@
             <i class="material-icons col-green">trending_up</i>
           </h3>
           <div class="apex-chart-center">
-            <apx-chart [series]="smallColumnChart.series" [chart]="smallColumnChart.chart"
-              [plotOptions]="smallColumnChart.plotOptions" [tooltip]="smallColumnChart.tooltip">
-            </apx-chart>
+            <!-- <apx-chart [series]="smallColumnChart.series" [chart]="smallColumnChart.chart" [plotOptions]="smallColumnChart.plotOptions" [tooltip]="smallColumnChart.tooltip">
+            </apx-chart> -->
           </div>
         </div>
       </div>
@@ -52,8 +49,7 @@
             <i class="material-icons col-red">trending_down</i>
           </h3>
           <div class="apex-chart-center">
-            <apx-chart [series]="smallLineChart.series" [chart]="smallLineChart.chart" [stroke]="smallLineChart.stroke"
-              [tooltip]="smallLineChart.tooltip"></apx-chart>
+            <!-- <apx-chart [series]="smallLineChart.series" [chart]="smallLineChart.chart" [stroke]="smallLineChart.stroke" [tooltip]="smallLineChart.tooltip"></apx-chart> -->
           </div>
         </div>
       </div>
@@ -77,9 +73,8 @@
             <div class="card">
               <!-- Canvas for Chart.js -->
               <div class="recent-report__chart">
-                <canvas baseChart [chartType]="'line'" [datasets]="areaChartData" [labels]="areaChartLabels"
-                  [options]="areaChartOptions" [plugins]="areaChartPlugins" [legend]="true">
-                </canvas>
+                <!-- <canvas baseChart [chartType]="'line'" [datasets]="areaChartData" [labels]="areaChartLabels" [options]="areaChartOptions" [plugins]="areaChartPlugins" [legend]="true"> 
+                </canvas>-->
               </div>
               <!-- Custom Axis -->
               <div class="axisData">
@@ -125,9 +120,9 @@
           <div class="body">
             <div class="card">
               <!-- Canvas for Chart.js -->
-              <canvas baseChart class="chart" [datasets]="radarChartData" [labels]="radarChartLabels"
+              <!-- <canvas baseChart class="chart" [datasets]="radarChartData" [labels]="radarChartLabels"
                 [options]="radarChartOptions" [chartType]="radarChartType" [plugins]="radarChartPlugins"
-                [colors]="radarChartColors"></canvas>
+                [colors]="radarChartColors"></canvas> -->
             </div>
           </div>
         </div>
@@ -528,8 +523,7 @@
                     <span class="float-end progress-percent label label-info m-b-5">17%</span>
                   </div>
                   <div class="progress skill-progress m-b-20 w-100">
-                    <div class="progress-bar l-bg-green width-per-45" role="progressbar" aria-valuenow="45"
-                      aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar l-bg-green width-per-45" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </li>
                 <li>
@@ -538,8 +532,7 @@
                     <span class="float-end progress-percent label label-danger m-b-5">27%</span>
                   </div>
                   <div class="progress skill-progress m-b-20 w-100">
-                    <div class="progress-bar l-bg-purple width-per-27" role="progressbar" aria-valuenow="27"
-                      aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar l-bg-purple width-per-27" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </li>
                 <li>
@@ -548,8 +541,7 @@
                     <span class="float-end progress-percent label label-primary m-b-5">25%</span>
                   </div>
                   <div class="progress skill-progress m-b-20 w-100">
-                    <div class="progress-bar l-bg-orange width-per-25" role="progressbar" aria-valuenow="25"
-                      aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar l-bg-orange width-per-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </li>
                 <li>
@@ -558,8 +550,7 @@
                     <span class="float-end progress-percent label label-success m-b-5">18%</span>
                   </div>
                   <div class="progress skill-progress m-b-20 w-100">
-                    <div class="progress-bar l-bg-cyan width-per-18" role="progressbar" aria-valuenow="18"
-                      aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar l-bg-cyan width-per-18" role="progressbar" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </li>
                 <li>
@@ -568,8 +559,7 @@
                     <span class="float-end progress-percent label label-warning m-b-5">13%</span>
                   </div>
                   <div class="progress skill-progress m-b-20 w-100">
-                    <div class="progress-bar l-bg-red width-per-13" role="progressbar" aria-valuenow="13"
-                      aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar l-bg-red width-per-13" role="progressbar" aria-valuenow="13" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </li>
               </ul>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTabsModule } from '@angular/material/tabs';
 import { AuthLayoutComponent } from './app-layout/auth-layout/auth-layout.component';
@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 @NgModule({
   imports: [CommonModule, NgbModule, MatTabsModule, SharedModule, MatIconModule ],
-  declarations: [AuthLayoutComponent, MainLayoutComponent]
+  declarations: [AuthLayoutComponent, MainLayoutComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
-export class LayoutModule {}
+export class LayoutModule {} 

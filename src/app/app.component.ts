@@ -8,8 +8,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  currentUrl: string;
-  constructor(
+  currentUrl: string;    
+  constructor(   
     public _router: Router,
     location: PlatformLocation,
     private spinner: NgxSpinnerService
@@ -27,7 +27,8 @@ export class AppComponent {
       if (routerEvent instanceof NavigationEnd) {
         this.spinner.hide();
       }
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 0); 
     });
-  }
-}
+  }   
+}  
+ 

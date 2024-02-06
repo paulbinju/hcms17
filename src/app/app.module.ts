@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,11 +16,11 @@ import { ErrorInterceptor } from './core/interceptor/error.interceptor';
 import { JwtInterceptor } from './core/interceptor/jwt.interceptor';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import {
-  PerfectScrollbarModule,
-  PERFECT_SCROLLBAR_CONFIG,
-  PerfectScrollbarConfigInterface
-} from 'ngx-perfect-scrollbar';
+// import {
+//   PerfectScrollbarModule,
+//   PERFECT_SCROLLBAR_CONFIG,
+//   PerfectScrollbarConfigInterface
+// } from 'ngx-perfect-scrollbar';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ClickOutsideModule } from 'ng-click-outside';
@@ -30,14 +30,14 @@ import {
   HttpClient
 } from '@angular/common/http';
 import { WINDOW_PROVIDERS } from './core/service/window.service';
-import { NgxEchartsModule } from 'ngx-echarts';
+// import { NgxEchartsModule } from 'ngx-echarts';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
  
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true,
-  wheelPropagation: false
-};
+// const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+//   suppressScrollX: true,
+//   wheelPropagation: false
+// };
 
 export function createTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -58,9 +58,9 @@ export function createTranslateLoader(http: HttpClient): any {
         BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
-        PerfectScrollbarModule,
+        // PerfectScrollbarModule,
         NgxSpinnerModule,
-        NgxEchartsModule,
+        // NgxEchartsModule,
         ClickOutsideModule,
         TranslateModule.forRoot({
             loader: {
@@ -76,15 +76,18 @@ export function createTranslateLoader(http: HttpClient): any {
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
-        {
-            provide: PERFECT_SCROLLBAR_CONFIG,
-            useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-        },
+        // {
+        //     provide: PERFECT_SCROLLBAR_CONFIG,
+        //     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+        // },
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
         fakeBackendProvider,
         WINDOW_PROVIDERS
     ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

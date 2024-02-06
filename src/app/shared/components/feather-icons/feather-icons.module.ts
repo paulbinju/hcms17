@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FeatherIconsComponent } from "./feather-icons.component";
 
@@ -9,5 +9,6 @@ import { allIcons } from "angular-feather/icons";
   imports: [CommonModule, FeatherModule.pick(allIcons)],
   exports: [FeatherIconsComponent, FeatherModule],
   declarations: [FeatherIconsComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FeatherIconsModule {}

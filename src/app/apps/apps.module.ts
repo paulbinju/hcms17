@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragulaModule } from 'ng2-dragula';
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+// import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppsRoutingModule } from './apps-routing.module';
 import { ChatComponent } from './chat/chat.component';
@@ -30,7 +30,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatRadioModule } from '@angular/material/radio';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+// import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { ComponentsModule } from '../shared/components/components.module';
 
 @NgModule({
@@ -44,7 +44,7 @@ import { ComponentsModule } from '../shared/components/components.module';
     CommonModule,
     AppsRoutingModule,
     FullCalendarModule,
-    PerfectScrollbarModule,
+    // PerfectScrollbarModule,
     MatButtonModule,
     NgxDatatableModule,
     MatTableModule,
@@ -68,8 +68,8 @@ import { ComponentsModule } from '../shared/components/components.module';
     MatTabsModule,
     MatMenuModule,
     MatCardModule,
-    OwlDateTimeModule,
-    OwlNativeDateTimeModule,
+    // OwlDateTimeModule,
+    // OwlNativeDateTimeModule,
     DragulaModule.forRoot(),
     ComponentsModule
   ]

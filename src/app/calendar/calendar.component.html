@@ -18,8 +18,7 @@
                 <div class="filter-container">
                   <ul>
                     <li *ngFor="let filter of filters">
-                      <mat-checkbox [checked]="filter.checked" [value]="filter.value" color="primary"
-                        (change)="changeCategory($event, filter)">
+                      <mat-checkbox [checked]="filter.checked" [value]="filter.value" color="primary" (change)="changeCategory($event, filter)">
                         {{filter.value}}
                       </mat-checkbox>
                     </li>
@@ -28,8 +27,8 @@
               </div>
               <div class="col-md-10 col-sm-12">
                 <div class="panel-body">
-                  <full-calendar [options]='calendarOptions'>
-                  </full-calendar>
+                  <!-- <full-calendar [options]='calendarOptions'>
+                  </full-calendar> -->
                 </div>
               </div>
             </div>

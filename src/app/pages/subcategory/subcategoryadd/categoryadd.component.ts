@@ -3,9 +3,9 @@ import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Ilookup } from 'src/app/interfaces/ilookup.model';
-import { SubCategoryService } from 'src/app/services/SubCategory.service';
+// import { SubCategoryService } from 'src/app/services/SubCategory.service';
 import { LookupService } from 'src/app/services/lookup.service';
-import { ICategories } from 'src/app/interfaces/ICategories';
+// import { ICategories } from 'src/app/interfaces/ICategories';
 import { CategoryService } from 'src/app/services/category.service';
 @Component({
   selector: 'app-SubCategoryadd',
@@ -17,9 +17,11 @@ export class SubCategoryaddComponent implements OnInit {
   groupName: string;
   lookup: Ilookup;
   articletypes: Ilookup;
-  categories:ICategories;
+  // categories:ICategories;
 
-  constructor(private fb: UntypedFormBuilder, private SubCategoryservice: SubCategoryService, private router: Router,
+  constructor(private fb: UntypedFormBuilder,
+    // private SubCategoryservice: SubCategoryService,
+    private router: Router,
     private matdialogRef: MatDialogRef<SubCategoryaddComponent>, private _lookupservice: LookupService,
     private _categories: CategoryService,
     @Inject(MAT_DIALOG_DATA) public data: { groupName: string }
@@ -53,7 +55,7 @@ export class SubCategoryaddComponent implements OnInit {
 
     this._categories.getCategory().subscribe({
       next: data => {
-        this.categories = data;
+        // this.categories = data;
       },
       error: error => {
         console.error('There was an error!', error);
@@ -65,7 +67,7 @@ export class SubCategoryaddComponent implements OnInit {
   }
 
   onSubmit(form: UntypedFormGroup) {
-    this.SubCategoryservice.postSubCategory(form.value).subscribe();
+    // this.SubCategoryservice.postSubCategory(form.value).subscribe();
     this.matdialogRef.close();
   }
 }

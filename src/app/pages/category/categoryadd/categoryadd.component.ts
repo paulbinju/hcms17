@@ -45,7 +45,7 @@ export class CategoryaddComponent implements OnInit {
   }
 
   onSubmit(form: UntypedFormGroup) {
-    this.categoryservice.postCategory(form.value).subscribe();
+    // this.categoryservice.postCategory(form.value).subscribe();
     this.matdialogRef.close();
   }
 }

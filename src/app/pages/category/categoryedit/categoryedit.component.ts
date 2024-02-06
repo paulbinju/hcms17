@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { ICategories } from 'src/app/interfaces/icategories';
+// import { ICategories } from 'src/app/interfaces/icategories';
 import { Ilookup } from 'src/app/interfaces/ilookup.model';
 import { CategoryService } from 'src/app/services/category.service';
 import { LookupService } from 'src/app/services/lookup.service';
@@ -18,17 +18,17 @@ export class CategoryeditComponent implements OnInit {
   articletypes:Ilookup;
   constructor(private fb: UntypedFormBuilder, private categoryservice: CategoryService, private router: Router,
     private matdialogRef: MatDialogRef<CategoryeditComponent>, private _lookupservice: LookupService,
-    @Inject(MAT_DIALOG_DATA) public data: { groupNamex: string, icategory: ICategories }
+    // @Inject(MAT_DIALOG_DATA) public data: { groupNamex: string, icategory: ICategories }
 
   ) { }
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      categoryID:[this.data.icategory.categoryID],
-      categoryName: [this.data.icategory.categoryName, Validators.required],
-      categoryCode: [this.data.icategory.categoryCode, Validators.required],
-      publicationID: [this.data.icategory.publicationID],
-      publication:[this.data.icategory.publication],
+      // categoryID:[this.data.icategory.categoryID],
+      // categoryName: [this.data.icategory.categoryName, Validators.required],
+      // categoryCode: [this.data.icategory.categoryCode, Validators.required],
+      // publicationID: [this.data.icategory.publicationID],
+      // publication:[this.data.icategory.publication],
       refNo:[0]
     });
 
@@ -52,7 +52,7 @@ export class CategoryeditComponent implements OnInit {
   }
 
   onSubmit(form: UntypedFormGroup) {
-    this.categoryservice.putCategory(form.value).subscribe();
+    // this.categoryservice.putCategory(form.value).subscribe();
     this.matdialogRef.close();
   }
 }

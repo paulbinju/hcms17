@@ -41,7 +41,7 @@ import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.compo
 import { SimpleDialogComponent } from './modal/simpleDialog.component';
 import { DialogformComponent } from './modal/dialogform/dialogform.component';
 import { BottomSheetOverviewExampleSheet } from './bottom-sheet/bottom-sheet.component';
-import { MatProgressButtonsModule } from 'mat-progress-buttons';
+// import { MatProgressButtonsModule } from 'mat-progress-buttons';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -95,7 +95,7 @@ import { ComponentsModule } from '../shared/components/components.module';
     NgbModule,
     MatMenuModule,
     ReactiveFormsModule,
-    MatProgressButtonsModule,
+    // MatProgressButtonsModule,
     MatDialogModule,
     ComponentsModule
   ]

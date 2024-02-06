@@ -27,8 +27,7 @@
                       <div class="header">
                         <h2 class="header-title">{{dialogTitle}}</h2>
                         <div class="header-close m-l-0">
-                          <button mat-icon-button *ngIf="!isNewEvent" (click)="deleteTask(sidenav)"
-                            matTooltip="Delete Task">
+                          <button mat-icon-button *ngIf="!isNewEvent" (click)="deleteTask(sidenav)" matTooltip="Delete Task">
                             <mat-icon>delete</mat-icon>
                           </button>
                           <button mat-icon-button *ngIf="isNewEvent" (click)="saveTask()" matTooltip="Save Task">
@@ -141,30 +140,24 @@
                       </form>
                     </mat-sidenav>
                     <mat-sidenav-content>
-                      <div cdkDropList class="task-list" (cdkDropListDropped)="drop($event)"
-                        style="position: relative; max-height: 500px;" [perfectScrollbar]>
+                      <div cdkDropList class="task-list" (cdkDropListDropped)="drop($event)" style="position: relative; max-height: 500px;">
                         <div class="task-box" *ngFor="let task of tasks" (click)="taskClick(task, sidenav)" cdkDrag>
                           <div>
                             <div class="task-handle m-r-20" cdkDragHandle>
                               <mat-icon aria-hidden="false">drag_indicator</mat-icon>
                             </div>
                           </div>
-                          <mat-checkbox (change)="toggle(task, sidenav)" [checked]="!!task.done" class="m-r-15"
-                            color="primary">
+                          <mat-checkbox (change)="toggle(task, sidenav)" [checked]="!!task.done" class="m-r-15" color="primary">
                           </mat-checkbox>
                           <div class="task-custom-placeholder" *cdkDragPlaceholder></div>
                           <div matTooltip="Title" [ngClass]="{done:task.done}">
                             {{task.title}}</div>
-                          <div
-                            [ngClass]="{'task-low': task.priority=='Low', 'task-high': task.priority=='High','task-normal': task.priority=='Normal'}">
-                            <mat-icon matTooltip="Low" aria-hidden="false" class="lbl-low"
-                              *ngIf="task?.priority == 'Low'">arrow_downward
+                          <div [ngClass]="{'task-low': task.priority=='Low', 'task-high': task.priority=='High','task-normal': task.priority=='Normal'}">
+                            <mat-icon matTooltip="Low" aria-hidden="false" class="lbl-low" *ngIf="task?.priority == 'Low'">arrow_downward
                             </mat-icon>
-                            <mat-icon matTooltip="High" aria-hidden="false" class="lbl-high"
-                              *ngIf="task?.priority == 'High'">arrow_upward
+                            <mat-icon matTooltip="High" aria-hidden="false" class="lbl-high" *ngIf="task?.priority == 'High'">arrow_upward
                             </mat-icon>
-                            <mat-icon matTooltip="Normal" aria-hidden="false" class="lbl-normal"
-                              *ngIf="task?.priority == 'Normal'">
+                            <mat-icon matTooltip="Normal" aria-hidden="false" class="lbl-normal" *ngIf="task?.priority == 'Normal'">
                               remove</mat-icon>
                             {{task.priority}}
                           </div>

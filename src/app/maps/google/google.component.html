@@ -9,8 +9,7 @@
     <div class="alert alert-warning">
       You need to get
       <b>Google Map API Key</b> for display maps with
-      <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" class="alert-link"
-        target="_blank">this link</a> (Also you can find documentation on same page).
+      <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" class="alert-link" target="_blank">this link</a> (Also you can find documentation on same page).
     </div>
     <!-- Basic Example -->
     <div class="row">
@@ -20,8 +19,8 @@
             <h4>Basic</h4>
           </div>
           <div class="card-body">
-            <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="15" style="height: 400px">
-            </agm-map>
+            <!-- <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="15" style="height: 400px">
+            </agm-map> -->
           </div>
         </div>
       </div>
@@ -34,10 +33,10 @@
             <h4>Markers</h4>
           </div>
           <div class="card-body">
-            <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="15" style="height: 400px">
+            <!-- <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="15" style="height: 400px">
               <agm-marker *ngFor="let marker of markers" [latitude]="marker.latitude" [longitude]="marker.longitude">
               </agm-marker>
-            </agm-map>
+            </agm-map> -->
           </div>
         </div>
       </div>
@@ -50,11 +49,11 @@
             <h4>Location</h4>
           </div>
           <div class="card-body">
-            <agm-map [latitude]="latitude" [longitude]="longitude" style="height: 400px">
+            <!-- <agm-map [latitude]="latitude" [longitude]="longitude" style="height: 400px">
               <agm-circle [latitude]="latitude" [longitude]="longitude" [radius]="9000" [fillColor]="'red'"
                 [circleDraggable]="true" [editable]="true">
               </agm-circle>
-            </agm-map>
+            </agm-map> -->
           </div>
         </div>
       </div>

@@ -1,0 +1,1 @@
+import{c as s}from"./chunk-DK5W4DIX.js";import"./chunk-CVYJYPYN.js";import{$ as n,V as o,Wb as l}from"./chunk-5OTRJNO2.js";import{g as e}from"./chunk-RZFRLYII.js";var P=(()=>{let t=class t{};e(t,"\u0275fac",function(d){return new(d||t)}),e(t,"\u0275mod",n({type:t})),e(t,"\u0275inj",o({imports:[l,s]}));let r=t;return r})();export{P as ChartsModule};

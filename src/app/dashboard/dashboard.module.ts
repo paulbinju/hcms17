@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MainComponent } from './main/main.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { Dashboard3Component } from './dashboard3/dashboard3.component';
-import { ChartsModule as chartjsModule } from 'ng2-charts';
+// import { ChartsModule as chartjsModule } from 'ng2-charts';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { GaugeModule } from 'angular-gauge';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,18 +21,19 @@ import { SharedModule } from './../shared/shared.module';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    chartjsModule,
     MatMenuModule,
+    // chartjsModule,
     MatIconModule,
     MatButtonModule,
-    PerfectScrollbarModule,
-    NgApexchartsModule,
-    NgxEchartsModule.forRoot({
-      echarts: () => import('echarts')
-    }),
-    GaugeModule.forRoot(),
+    // PerfectScrollbarModule,
+    // NgApexchartsModule,
+    // NgxEchartsModule.forRoot({
+    //   echarts: () => import('echarts')
+    // }),
+    // GaugeModule.forRoot(),
     ComponentsModule,
     SharedModule
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashboardModule {}

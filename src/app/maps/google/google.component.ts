@@ -6,7 +6,7 @@ import {
   PLATFORM_ID
 } from '@angular/core';
 
-import { MapsAPILoader } from '@agm/core';
+// import { MapsAPILoader } from '@agm/core';
 
 import { isPlatformBrowser } from '@angular/common';
 @Component({
@@ -33,7 +33,7 @@ export class GoogleComponent implements OnInit {
   // bread crumb items
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
-    private mapsAPILoader: MapsAPILoader
+    // private mapsAPILoader: MapsAPILoader
   ) {}
 
   ngOnInit(): void {
@@ -43,26 +43,26 @@ export class GoogleComponent implements OnInit {
 
   initStreetViewMap() {
     if (isPlatformBrowser(this.platformId)) {
-      this.mapsAPILoader.load().then(() => {
-        const center = { lat: 23.02482, lng: 72.55991 };
-        const map = new window['google'].maps.Map(
-          this.streetviewMap.nativeElement,
-          {
-            center,
-            zoom: 12,
-            scrollwheel: false
-          }
-        );
-        const panorama = new window['google'].maps.StreetViewPanorama(
-          this.panoramaMap.nativeElement,
-          {
-            position: center,
-            pov: { heading: 34, pitch: 10 },
-            scrollwheel: false
-          }
-        );
-        map.setStreetView(panorama);
-      });
+      // this.mapsAPILoader.load().then(() => {
+      //   const center = { lat: 23.02482, lng: 72.55991 };
+      //   const map = new window['google'].maps.Map(
+      //     this.streetviewMap.nativeElement,
+      //     {
+      //       center,
+      //       zoom: 12,
+      //       scrollwheel: false
+      //     }
+      //   );
+      //   const panorama = new window['google'].maps.StreetViewPanorama(
+      //     this.panoramaMap.nativeElement,
+      //     {
+      //       position: center,
+      //       pov: { heading: 34, pitch: 10 },
+      //       scrollwheel: false
+      //     }
+      //   );
+      //   map.setStreetView(panorama);
+      // });
     }
   }
 

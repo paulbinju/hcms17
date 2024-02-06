@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+// import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { FormsModule } from '@angular/forms';
 import { WidgetRoutingModule } from './widget-routing.module';
 import { ChartWidgetComponent } from './chart-widget/chart-widget.component';
@@ -22,7 +22,7 @@ import { ComponentsModule } from '../shared/components/components.module';
   imports: [
     CommonModule,
     WidgetRoutingModule,
-    PerfectScrollbarModule,
+    // PerfectScrollbarModule,
     NgApexchartsModule,
     FormsModule,
     MatFormFieldModule,
@@ -35,6 +35,7 @@ import { ComponentsModule } from '../shared/components/components.module';
     MatTabsModule,
     chartjsModule,
     ComponentsModule
-  ]
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WidgetModule {}

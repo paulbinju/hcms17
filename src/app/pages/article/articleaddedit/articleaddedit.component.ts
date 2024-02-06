@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IArticles } from 'src/app/interfaces/IArticles';
-import { ICategories } from 'src/app/interfaces/ICategories';
+// import { IArticles } from 'src/app/interfaces/IArticles';
+// import { ICategories } from 'src/app/interfaces/ICategories';
 import { IIssues } from 'src/app/interfaces/iissues';
 import { Ilookup } from 'src/app/interfaces/ilookup.model';
-import { Isubcategories } from 'src/app/interfaces/ISubCategories';
+// import { Isubcategories } from 'src/app/interfaces/ISubCategories';
 import { ArticleService } from 'src/app/services/article.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { IssueService } from 'src/app/services/issue.service';
 import { LookupService } from 'src/app/services/lookup.service';
-import { SubCategoryService } from 'src/app/services/SubCategory.service';
+// import { SubCategoryService } from 'src/app/services/SubCategory.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
@@ -36,14 +36,14 @@ export class ArticleaddeditComponent implements OnInit {
   articletypesFiltered: Ilookup[];
   countries: Ilookup[];
   public editArticleID: number;
-  icategories: ICategories[];
-  icategoriesFiltered: ICategories[];
-  iSubcategories: Isubcategories[];
-  iSubcategoriesFiltered: Isubcategories[];
+  // icategories: ICategories[];
+  // icategoriesFiltered: ICategories[];
+  // iSubcategories: Isubcategories[];
+  // iSubcategoriesFiltered: Isubcategories[];
   iissues: IIssues[];
   iissuesFiltered: IIssues[];
   curUser: string;
-  public iArticles: IArticles;
+  // public iArticles: IArticles;
   public iArticleExtensions: IArticleExtensions;
   public imageURL: string;
   public showSubcategory: boolean = false;
@@ -52,7 +52,8 @@ export class ArticleaddeditComponent implements OnInit {
   public editImage: string;
   public saveButton: boolean = true;
   constructor(private fb: UntypedFormBuilder, private _lookupservice: LookupService, private categoryservice: CategoryService,
-    private subcategoryservice: SubCategoryService, private issueservice: IssueService, private articleService: ArticleService,
+    // private subcategoryservice: SubCategoryService,
+    private issueservice: IssueService, private articleService: ArticleService,
     private router: Router, private httpClient: HttpClient, private dialog: MatDialog, private activatedRoute: ActivatedRoute,
     public domSanitizer: DomSanitizer, public spinnerservice: NgxSpinnerService, public snackBar: MatSnackBar
   ) { }
@@ -105,52 +106,52 @@ export class ArticleaddeditComponent implements OnInit {
     });
     this.categoryservice.getCategory().subscribe({
       next: data => {
-        this.icategories = data;
+        // this.icategories = data;
       },
       error: error => {
         console.error('There was an error!', error);
       }
     })
-    this.subcategoryservice.getSubCategory().subscribe({
-      next: data => {
-        this.iSubcategories = data;
-      },
-      error: error => {
-        console.error('There was an error!', error);
-      }
-    });
+    // this.subcategoryservice.getSubCategory().subscribe({
+    //   next: data => {
+    //     this.iSubcategories = data;
+    //   },
+    //   error: error => {
+    //     console.error('There was an error!', error);
+    //   }
+    // });
     if (this.editArticleID != 0) {
 
       this.spinnerservice.show();
       setTimeout(() => {
         this.articleService.getArticlebyID(this.editArticleID).subscribe({
-          next: data => {
-            this.iArticles = data;
-            this.myForm.controls['publicationID'].setValue(this.iArticles[0].publicationID);
-            this.myForm.controls['issueID'].setValue(this.iArticles[0].issueID);
-            this.myForm.controls['categoryID'].setValue(this.iArticles[0].categoryID);
-            this.myForm.controls['articleTypeID'].setValue(this.iArticles[0].articleTypeID);
-            this.myForm.controls['subCategoryID'].setValue(this.iArticles[0].subCategoryID);
-            this.myForm.controls['countryID'].setValue(this.iArticles[0].countryID);
-            this.myForm.controls['authorID'].setValue(JSON.parse(localStorage.getItem('currentUser'))[0].userID);
-            this.myForm.controls['author'].setValue(JSON.parse(localStorage.getItem('currentUser'))[0].name);
-            this.myForm.get(`title`).setValue(this.iArticles[0].title);
-            this.myForm.get(`byline`).setValue(this.iArticles[0].byline != `null` ? this.iArticles[0].byline : ``);
-            this.myForm.get(`dateline`).setValue(this.iArticles[0].dateline != `null` ? this.iArticles[0].dateline : ``);
-            this.myForm.get(`slug`).setValue(this.iArticles[0].slug != `null` ? this.iArticles[0].slug : ``);
-            this.myForm.get(`tags`).setValue(this.iArticles[0].tags != `null` ? this.iArticles[0].tags : ``);
-            this.myForm.get(`articleBody`).setValue(this.iArticles[0].articleBody);
-            this.myForm.get(`featuredImageCaption`).setValue(this.iArticles[0].featuredImageCaption != `null` ? this.iArticles[0].featuredImageCaption : ``);
-            this.myForm.get(`publishToTA`).setValue(this.iArticles[0].publishToTA);
-            this.myForm.get(`publishToMAG`).setValue(this.iArticles[0].publishToMAG);
+          // next: data => {
+          //   this.iArticles = data;
+          //   this.myForm.controls['publicationID'].setValue(this.iArticles[0].publicationID);
+          //   this.myForm.controls['issueID'].setValue(this.iArticles[0].issueID);
+          //   this.myForm.controls['categoryID'].setValue(this.iArticles[0].categoryID);
+          //   this.myForm.controls['articleTypeID'].setValue(this.iArticles[0].articleTypeID);
+          //   this.myForm.controls['subCategoryID'].setValue(this.iArticles[0].subCategoryID);
+          //   this.myForm.controls['countryID'].setValue(this.iArticles[0].countryID);
+          //   this.myForm.controls['authorID'].setValue(JSON.parse(localStorage.getItem('currentUser'))[0].userID);
+          //   this.myForm.controls['author'].setValue(JSON.parse(localStorage.getItem('currentUser'))[0].name);
+          //   this.myForm.get(`title`).setValue(this.iArticles[0].title);
+          //   this.myForm.get(`byline`).setValue(this.iArticles[0].byline != `null` ? this.iArticles[0].byline : ``);
+          //   this.myForm.get(`dateline`).setValue(this.iArticles[0].dateline != `null` ? this.iArticles[0].dateline : ``);
+          //   this.myForm.get(`slug`).setValue(this.iArticles[0].slug != `null` ? this.iArticles[0].slug : ``);
+          //   this.myForm.get(`tags`).setValue(this.iArticles[0].tags != `null` ? this.iArticles[0].tags : ``);
+          //   this.myForm.get(`articleBody`).setValue(this.iArticles[0].articleBody);
+          //   this.myForm.get(`featuredImageCaption`).setValue(this.iArticles[0].featuredImageCaption != `null` ? this.iArticles[0].featuredImageCaption : ``);
+          //   this.myForm.get(`publishToTA`).setValue(this.iArticles[0].publishToTA);
+          //   this.myForm.get(`publishToMAG`).setValue(this.iArticles[0].publishToMAG);
 
-            if (this.iArticles[0].featuredImageURL != null) {
-              this.imageURL = environment.imageURL + this.iArticles[0].featuredImageURL;
-            }
+          //   if (this.iArticles[0].featuredImageURL != null) {
+          //     this.imageURL = environment.imageURL + this.iArticles[0].featuredImageURL;
+          //   }
 
 
 
-          },
+          // },
           error: error => {
             console.error('There was an error!', error);
           },
@@ -158,9 +159,9 @@ export class ArticleaddeditComponent implements OnInit {
       }, 1000);
 
       setTimeout(() => {
-        this.onChangePublication(this.iArticles[0].publicationID);
-        this.onChangeCategory(this.iArticles[0].categoryID);
-        this.onChangeArticleType(this.iArticles[0].articleTypeID);
+        // this.onChangePublication(this.iArticles[0].publicationID);
+        // this.onChangeCategory(this.iArticles[0].categoryID);
+        // this.onChangeArticleType(this.iArticles[0].articleTypeID);
         this.spinnerservice.hide();
       }, 2000);
 
@@ -208,7 +209,7 @@ export class ArticleaddeditComponent implements OnInit {
       }
       else {
         if (this.editArticleID != 0) {
-          formData.append('featuredImageURL', this.iArticles[0].featuredImageURL);
+          // formData.append('featuredImageURL', this.iArticles[0].featuredImageURL);
         }
       }
 
@@ -266,7 +267,7 @@ export class ArticleaddeditComponent implements OnInit {
     }
   }
   onChangePublication(selvalue) {
-    this.icategoriesFiltered = this.icategories.filter(x => x.publicationID == selvalue);
+    // this.icategoriesFiltered = this.icategories.filter(x => x.publicationID == selvalue);
     if (selvalue == 1) { // Tradearabia
       this.articletypesFiltered = this.articletypes.filter(x => x.title != 'Issue Article');
       this.showIssue = false;
@@ -289,16 +290,16 @@ export class ArticleaddeditComponent implements OnInit {
     }
   }
   onChangeArticleType(selvalue) {
-    this.iSubcategoriesFiltered = this.iSubcategories
-      .filter(x => x.publicationID == this.myForm.value.publicationID)
-      .filter(x => x.categoryID == this.myForm.value.categoryID)
-      .filter(x => x.articleTypeID == selvalue);
+    // this.iSubcategoriesFiltered = this.iSubcategories
+    //   .filter(x => x.publicationID == this.myForm.value.publicationID)
+    //   .filter(x => x.categoryID == this.myForm.value.categoryID)
+    //   .filter(x => x.articleTypeID == selvalue);
   }
   onChangeCategory(selvalue) {
-    this.iSubcategoriesFiltered = this.iSubcategories
-      .filter(x => x.publicationID == this.myForm.value.publicationID)
-      .filter(x => x.categoryID == selvalue)
-      .filter(x => x.articleTypeID == this.myForm.value.articleTypeID);
+    // this.iSubcategoriesFiltered = this.iSubcategories
+    //   .filter(x => x.publicationID == this.myForm.value.publicationID)
+    //   .filter(x => x.categoryID == selvalue)
+    //   .filter(x => x.articleTypeID == this.myForm.value.articleTypeID);
   }
   ArticleExtension(extensiontype) {
     this.dialog.open(ArticleextensionComponent, {
